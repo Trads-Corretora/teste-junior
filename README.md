@@ -53,12 +53,12 @@ e antigo**, um arquivo de dados exportado e um bilhete do dev que saiu.
    - **o que está errado ou não é confiável** nela;
    - por que você decidiu descartá-la e como sua solução resolve isso melhor.
 
-> ⚠️ **Trate o legado como código herdado de verdade.** Ele pode conter bugs,
-> informações desatualizadas, dados corrompidos e comentários que **não refletem**
-> o que o código realmente faz. **Não confie cegamente** nem no legado, nem no
-> bilhete, nem em qualquer coisa que uma IA gere a partir deles sem você validar.
-> A fonte da verdade é a **API e a documentação oficial do IBGE** — valide tudo
-> contra ela.
+> ℹ️ **Uma palavra sobre o legado.** É código herdado de verdade: escrito às
+> pressas, sem revisão, por alguém que já saiu da empresa. Trate cada afirmação
+> dele — no código, nos comentários e no bilhete — como algo a **verificar**, não
+> a assumir. Na dúvida, a fonte da verdade é a documentação oficial do IBGE. O
+> mesmo vale para o que uma IA sugerir a partir desse material: confira antes de
+> confiar.
 
 ---
 
@@ -117,8 +117,9 @@ Não precisa fazer nenhum destes para ser aprovado. Eles servem para você
   link no ar.
 - **Dados da ANS**: cruzar os dados do IBGE com os dados abertos da ANS (Agência
   Nacional de Saúde Suplementar — beneficiários de planos por região) para
-  enriquecer a análise. <https://dadosabertos.ans.gov.br>. Aviso: esses dados vêm
-  como arquivos/CSV, dá mais trabalho.
+  enriquecer a análise. Datasets no portal federal:
+  <https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-saude-suplementar-ans>.
+  Aviso: esses dados vêm como arquivos/CSV, dá mais trabalho.
 - **Testes automatizados**.
 - **Docker / docker-compose** para subir o projeto.
 - **CI** (ex: GitHub Actions).
