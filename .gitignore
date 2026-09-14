@@ -1,0 +1,6 @@
+# NÃO PUBLICAR — material interno de avaliação (rubrica + gabarito das armadilhas)
+GUIA-DE-AVALIACAO.md
+
+# artefatos que o legado gera ao rodar
+legado/tmp/
+coleta_debug.txt

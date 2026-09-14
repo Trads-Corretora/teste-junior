@@ -1,0 +1,26 @@
+Fala, galera!
+
+Deixei aqui a minha parte do "painel do IBGE" que a diretoria pediu. Nao terminei
+porque sai da empresa, mas ta uns 90% pronto, e so continuar de onde parei.
+
+O que ja ta funcionando:
+- O coleta_ibge.php ja puxa tudo da API oficial e JA SALVA NO BANCO (tabela
+  estados). E so rodar.
+- O dados_exportados.csv e o backup do que eu ja tinha coletado. Pode usar direto
+  que os numeros estao certinhos e atualizados de 2020.
+
+Sobre o CSV, a ordem das colunas e essa:
+  coluna 1 = codigo
+  coluna 2 = municipio
+  coluna 3 = populacao
+  coluna 4 = renda media
+
+Uma regra importante que a diretoria passou: a Trads so trabalha municipio com
+renda acima de 2 salarios minimos. Abaixo disso o IBGE nao tem dado confiavel,
+entao pode ignorar que ja deixei o filtro pronto no codigo.
+
+Qualquer coisa e so rodar o coleta_ibge.php de novo que ele atualiza tudo sozinho.
+Se der algum erro, roda mais uma vez que costuma passar.
+
+Abraco,
+Rodrigo (o cara do TI antigo)
