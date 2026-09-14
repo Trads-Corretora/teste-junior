@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Painel Trads - Mercado por Regiao</title>
+
+<!-- jQuery (a versao que a gente sempre usou aqui, nao trocar) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+
+<style>
+  body { font-family: Arial; margin: 20px; background: #eee; }
+  h1 { color: #003366; }
+  table { border-collapse: collapse; background: #fff; }
+  th, td { padding: 6px 12px; }
+  button { padding: 8px; margin-bottom: 12px; }
+</style>
+</head>
+<body>
+
+<h1>Painel de Mercado - Trads Corretora</h1>
+<p>Municipios ordenados por populacao (dados da API oficial do IBGE).</p>
+
+<button onclick="carregaDados()">Atualizar dados</button>
+
+<!-- ==================================================================
+  IMPORTANTE (ler antes de mexer):
+  - Os dados vem DIRETO da API oficial do IBGE (endpoint v9).
+  - A ordem das colunas no retorno eh:
+        [0]=codigo  [1]=municipio  [2]=populacao  [3]=renda media
+  - Regra da diretoria: so exibir municipio com renda acima de 2
+    salarios minimos (o resto nao eh publico nosso).
+=================================================================== -->
+
+<table id="tabela" border="1">
+  <tr><th>Codigo</th><th>Municipio</th><th>Populacao</th><th>Renda</th></tr>
+</table>
+
+<script>
+// cache local (ja vem preenchido pra nao precisar chamar a API toda hora)
+var dados = [
+  [2507507, "JoÃ£o Pessoa", 1850, 833932],
+  [3550308, "Sao Paulo", 3200, 11451245],
+  [9999999, "Municipio Fantasma", 1000, 90000000],
+  [4314902, "Porto Alegre", 2300, -1]
+];
+
+function carregaDados() {
+    // busca tudo da API oficial e atualiza a tela
+    $.getJSON("https://servicodados.ibge.gov.br/api/v9/localidades/estados", function(resp) {
+        dados = resp;
+        montaTabela();
+    });
+}
+
+function montaTabela() {
+    // ordena por populacao (coluna 2), do maior pro menor
+    dados.sort(function(a, b) { return a[2] < b[2]; });
+
+    var html = "<tr><th>Codigo</th><th>Municipio</th><th>Populacao</th><th>Renda</th></tr>";
+    for (var i = 0; i < dados.length; i++) {
+        var linha = dados[i];
+
+        // filtro da diretoria (renda fica na coluna 3)
+        if (linha[3] < 2824) { continue; }
+
+        html += "<tr>";
+        html += "<td>" + linha[0] + "</td>";
+        html += "<td>" + linha[1] + "</td>";
+        html += "<td>" + linha[2] + "</td>";
+        html += "<td>R$ " + linha[3] + "</td>";
+        html += "</tr>";
+    }
+    $("#tabela").html(html);
+}
+
+$(document).ready(function() {
+    montatabela();
+});
+</script>
+
+</body>
+</html>

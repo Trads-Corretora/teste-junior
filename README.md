@@ -38,8 +38,9 @@ O tema (inteligência de mercado) é o norte. Como você resolve, é com você.
 
 ## A herança: o código legado
 
-Na pasta [`legado/`](./legado) existe a tentativa anterior: um script em **PHP puro
-e antigo**, um arquivo de dados exportado e um bilhete do dev que saiu.
+Na pasta [`legado/`](./legado) existe a tentativa anterior: um script de backend em
+**PHP puro e antigo**, um **frontend legado** (HTML + jQuery), um arquivo de dados
+exportado e um bilhete do dev que saiu.
 
 **Sua tarefa obrigatória com o legado:**
 
@@ -93,8 +94,11 @@ Sua entrega **precisa** ter todos estes itens:
 5. **Frontend com dashboard** — pelo menos **duas** visualizações (gráfico,
    ranking, tabela com destaque, mapa, etc.) e filtros que atualizam o que é
    exibido.
-6. **README com as suas decisões** (ver seção "O que entregar").
-7. **Repositório público no GitHub**, com histórico de commits que conte a
+6. **Docker** — o projeto sobe com **Docker** (idealmente um `docker compose up`
+   que levante aplicação + banco de uma vez). Devemos conseguir rodar tudo sem
+   instalar sua linguagem/banco na nossa máquina.
+7. **README com as suas decisões** (ver seção "O que entregar").
+8. **Repositório público no GitHub**, com histórico de commits que conte a
    evolução do trabalho (evite um único commit "projeto pronto").
 
 ## Liberdade de tecnologia
@@ -121,7 +125,6 @@ Não precisa fazer nenhum destes para ser aprovado. Eles servem para você
   <https://dados.gov.br/dados/organizacoes/visualizar/agencia-nacional-de-saude-suplementar-ans>.
   Aviso: esses dados vêm como arquivos/CSV, dá mais trabalho.
 - **Testes automatizados**.
-- **Docker / docker-compose** para subir o projeto.
 - **CI** (ex: GitHub Actions).
 - **Atualização automática/agendada** dos dados.
 - **Tratamento de erros, paginação, autenticação** bem feitos.
