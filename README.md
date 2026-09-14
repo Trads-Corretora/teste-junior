@@ -156,4 +156,9 @@ Responda para o RH com o **link do repositório público**. Confirme que o repo 
 Ficou algo ambíguo? Tome uma decisão razoável, **documente a suposição no README**
 e siga. Saber decidir com informação incompleta também faz parte do trabalho.
 
+Se ainda assim tiver uma dúvida que precise de resposta, abra um tópico na aba
+**[Discussions](https://github.com/Trads-Corretora/teste-junior/discussions)**
+deste repositório. Respondemos por lá — e assim a resposta fica visível para
+todos os candidatos.
+
 Boa sorte — estamos ansiosos para ver o que você vai construir. 🚀
